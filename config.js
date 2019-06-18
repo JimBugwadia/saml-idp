@@ -10,7 +10,8 @@ var profile = {
   displayName: 'saml jackson',
   email: 'saml.jackson@example.com',
   mobilePhone: '+1-415-555-5141',
-  groups: 'Simple IdP Users, West Coast Users, Cloud Users'
+  groups: 'team1, team2, team3',
+  role: 'readonly',
 }
 
 /**
@@ -53,11 +54,12 @@ var metadata = [{
   description: 'Group memberships of the user',
   multiValue: true
 }, {
-  id: "userType",
+  id: "role",
   optional: true,
-  displayName: 'User Type',
-  description: 'The type of user',
-  options: ['Admin', 'Editor', 'Commenter']
+  displayName: 'Role',
+  description: 'The role of the user',
+  options: ['admin', 'platform', 'devops', 'readonly'],
+  multiValue: false
 }];
 
 module.exports = {
